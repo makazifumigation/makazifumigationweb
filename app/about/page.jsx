@@ -1,6 +1,14 @@
 "use client";
 
-import { FaCode, FaLaptopCode, FaGraduationCap } from "react-icons/fa";
+import {
+  FaCode,
+  FaLaptopCode,
+  FaGraduationCap,
+  FaHome,
+  FaBuilding,
+  FaBug,
+  FaIndustry,
+} from "react-icons/fa";
 import { motion } from "framer-motion";
 import {
   fadeInUp,
@@ -47,14 +55,12 @@ const page = () => {
             variants={fadeInUp}
             {...cardHover}
           >
-            <FaCode className="h-8 w-8 text-primary mb-4" />
+            <FaHome className="h-8 w-8 text-primary mb-4" />
             <h3 className="text-xl font-semibold mb-2">Homes</h3>
-            <ul className="text-secondary space-y-2">
-              <li>React / Next.js</li>
-              <li>TypeScript</li>
-              <li>Tailwind CSS</li>
-              <li>HTML5 / CSS3</li>
-            </ul>
+            <p>
+              Kama unadhani unahitaji kuua wadudu nyumbani kwako, tupo
+              kukusaidia katika hilo.
+            </p>
           </motion.div>
 
           <motion.div
@@ -62,14 +68,12 @@ const page = () => {
             variants={fadeInUp}
             {...cardHover}
           >
-            <FaLaptopCode className="h-8 w-8 text-primary mb-4" />
+            <FaBuilding className="h-8 w-8 text-primary mb-4" />
             <h3 className="text-xl font-semibold mb-2">Offices</h3>
-            <ul className="text-secondary space-y-2">
-              <li>Node.js</li>
-              <li>Express</li>
-              <li>PostgreSQL</li>
-              <li>MongoDB</li>
-            </ul>
+            <p>
+              Kama unadhani unahitaji kuua wadudu ofisini kwako, tupo kukusaidia
+              katika hilo.
+            </p>
           </motion.div>
 
           <motion.div
@@ -77,14 +81,12 @@ const page = () => {
             variants={fadeInUp}
             {...cardHover}
           >
-            <FaGraduationCap className="h-8 w-8 text-primary mb-4" />
+            <FaIndustry className="h-8 w-8 text-primary mb-4" />
             <h3 className="text-xl font-semibold mb-2">Industries</h3>
-            <ul className="text-secondary space-y-2">
-              <li>Git / GitHub</li>
-              <li>Docker</li>
-              <li>AWS</li>
-              <li>CI/CD</li>
-            </ul>
+            <p>
+              Kama unadhani unahitaji kuua wadudu kiwandani kwako, tupo
+              kukusaidia katika hilo.
+            </p>
           </motion.div>
         </motion.div>
       </motion.section>
