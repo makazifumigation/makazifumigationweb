@@ -9,10 +9,12 @@ import { fadeInUp, staggerContainer, cardHoverSmall } from "@/utils/animations";
 import { useEffect, useState } from "react";
 import { collection, getDocs, orderBy, query, where } from "firebase/firestore";
 import { db } from "@/lib/firebase";
+import { useLanguage } from "@/lib/LanguageContext";
 
 const page = () => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
+  const { language } = useLanguage();
 
   const getProjects = async () => {
     const dbInstance = collection(db, "Projects");
@@ -52,7 +54,7 @@ const page = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        My Projects
+        {language === "sw" ? "Kazi Zetu" : "Our Projects"}
       </motion.h1>
       <motion.p
         className="text-lg text-secondary mb-24 text-center"
@@ -60,8 +62,13 @@ const page = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        Here are some of my recent projects. Click on the links to view the code
-        or live demo.
+        {language === "sw"
+          ? "Tumegusa maisha ya watu sehemu mbalimbali."
+          : "We’ve made a meaningful impact in the community."}
+        <br />
+        {language === "sw"
+          ? "Hizi ni miongoni mwa kazi tulizofanya"
+          : "Here are some of our most notable projects."}
       </motion.p>
 
       <motion.div
