@@ -4,6 +4,8 @@ import { ThemeProvider } from "@/lib/ThemeContext";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { AuthContextProvider } from "@/lib/AuthContext";
+import LanguageToggle from "@/components/LanguageToggle";
+import { LanguageProvider } from "@/lib/LanguageContext";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,9 +30,14 @@ export default function RootLayout({ children }) {
       >
         <ThemeProvider>
           <AuthContextProvider>
-            <Navbar />
-            <main className="min-h-screen pt-24">{children}</main>
-            <Footer />
+            <LanguageProvider>
+              <Navbar />
+              <main className="min-h-screen pt-24">
+                {children}
+                <LanguageToggle /> {/* Floating button here */}
+              </main>
+              <Footer />
+            </LanguageProvider>
           </AuthContextProvider>
         </ThemeProvider>
       </body>

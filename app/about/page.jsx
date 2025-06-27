@@ -17,31 +17,72 @@ import {
   staggerContainer,
   cardHover,
   cardHoverSmall,
+  scaleIn,
 } from "@/utils/animations";
+import { useLanguage } from "@/lib/LanguageContext";
+import Image from "next/image";
+import Link from "next/link";
 
 const page = () => {
+  const { language } = useLanguage();
   return (
-    <div className="container max-w-7xl mx-auto py-12">
-      <motion.h1
-        className="text-4xl font-bold mb-8 text-center"
-        {...fadeInDown}
-      >
-        About Us
-      </motion.h1>
-
-      {/* Bio Section */}
-      <motion.section className="mb-16" {...fadeInUp}>
-        <p className="text-lg text-secondary max-w-3xl mx-auto text-center">
-          At Makazi Fumigation, our mission is to lead the pest control industry
-          by delivering top-notch services using the latest proven technology
-          and environmentally friendly pesticides. We are committed to providing
-          effective and safe pest control solutions tailored to your needs.
-        </p>
-      </motion.section>
+    <div className=" py-14 ">
+      <div className=" md:flex md:items-center max-w-7xl mx-auto px-4">
+        <div className="w-full md:w-1/2">
+          <motion.div
+            className="flex justify-center items-center"
+            {...scaleIn}
+            transition={{ delay: 0.2 }}
+          >
+            <Image
+              className="mx-auto rounded-2xl w-full aspect-video p-2 bg-gray-300 dark:bg-white object-cover"
+              src="/images/about.jpg"
+              height={1080}
+              width={1920}
+              alt="socials"
+            />
+          </motion.div>
+        </div>
+        <div className="w-full md:w-1/2 mx-auto text-center md:text-start mt-16 md:mt-0">
+          <motion.h1
+            className="text-4xl font-bold mb-6 px-6"
+            {...fadeInUp}
+            transition={{ delay: 0.3 }}
+          >
+            {language === "sw" ? "Kuhusu" : "About"}{" "}
+            <motion.span
+              className="text-primary"
+              {...fadeIn}
+              transition={{ delay: 0.8 }}
+            >
+              {language === "sw" ? "Sisi" : "Us"}
+            </motion.span>
+          </motion.h1>
+          <motion.p
+            className="text-lg text-gray-600 dark:text-gray-300 mb-8 px-6"
+            {...fadeInUp}
+            transition={{ delay: 0.4 }}
+          >
+            {language === "sw"
+              ? "At Makazi Fumigation and Hygiene Services, we believe that clean, safe, and healthy environments are essential for the well-being of individuals, families, and communities."
+              : "Think pest control, think Makazi Fumigation."}
+            <span className="block md:hidden lg:block">
+              {" "}
+              {language === "sw"
+                ? " Based in Tanzania, we provide professional fumigation, pest control, and hygiene services designed to meet the needs of residential homes, institutions, commercial properties, and industrial facilities."
+                : "Your trusted partner in safe and effective solutions."}
+            </span>
+          </motion.p>
+        </div>
+      </div>
 
       {/* Skills Section */}
-      <motion.section className="mb-16" {...fadeIn} transition={{ delay: 0.2 }}>
-        <motion.h2 className="section-title" {...fadeInUp}>
+      <motion.section
+        className="mb-16 px-4"
+        {...fadeIn}
+        transition={{ delay: 0.2 }}
+      >
+        <motion.h2 className="section-title mt-16" {...fadeInUp}>
           Areas Of Focus
         </motion.h2>
         <motion.div

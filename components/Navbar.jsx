@@ -10,21 +10,40 @@ import {
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import { useLanguage } from "@/lib/LanguageContext";
 
 const Navbar = () => {
   const { theme, toggleTheme } = useTheme();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { language } = useLanguage();
+
+  const labels = {
+    en: {
+      home: "Home",
+      about: "About",
+      projects: "Projects",
+      blogs: "Blogs",
+      contact: "Contact",
+    },
+    sw: {
+      home: "Nyumbani",
+      about: "Kuhusu Sisi",
+      projects: "Kazi Zetu",
+      blogs: "Makala",
+      contact: "Mawasiliano",
+    },
+  };
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
   const menuItems = [
-    { href: "/", label: "Home" },
-    { href: "/about", label: "About" },
-    { href: "/projects", label: "Projects" },
-    { href: "/blogs", label: "Blogs" },
-    { href: "/contact", label: "Contact" },
+    { href: "/", label: labels[language].home },
+    { href: "/about", label: labels[language].about },
+    { href: "/projects", label: labels[language].projects },
+    { href: "/blogs", label: labels[language].blogs },
+    { href: "/contact", label: labels[language].contact },
   ];
 
   return (

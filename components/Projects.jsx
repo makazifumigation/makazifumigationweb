@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import { collection, getDocs, orderBy, query, where } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 
-const Projects = () => {
+const Projects = ({ language }) => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -50,16 +50,20 @@ const Projects = () => {
           className="text-3xl font-bold mb-4 text-center"
           {...fadeInUp}
         >
-          Featured Projects
+          {language === "sw" ? "Kazi Tulizo Fanya" : "Featured Projects"}
         </motion.h2>
         <motion.p
           className="text-xl text-gray-600 dark:text-gray-300 mb-8 px-6 text-center"
           {...fadeInUp}
           transition={{ delay: 0.4 }}
         >
-          We’ve made a meaningful impact in the community.
+          {language === "sw"
+            ? "Tumegusa maisha ya watu sehemu mbalimbali."
+            : "We’ve made a meaningful impact in the community."}
           <br />
-          Here are some of our most notable projects.
+          {language === "sw"
+            ? "Hizi ni miongoni mwa kazi tulizofanya"
+            : "Here are some of our most notable projects."}
         </motion.p>
 
         <motion.div

@@ -1,5 +1,6 @@
 "use client";
 import { WebContent } from "@/lib/AuthContext";
+import { useLanguage } from "@/lib/LanguageContext";
 import Link from "next/link";
 import {
   FaGithub,
@@ -12,6 +13,7 @@ import {
 
 const Footer = () => {
   const { contentData, fetchContentData } = WebContent();
+  const { language } = useLanguage();
 
   return (
     <footer className="bg-white dark:bg-dark border-t border-gray-200 dark:border-gray-800">
@@ -22,8 +24,10 @@ const Footer = () => {
               Makazi Fumigation&trade;
             </Link>
             <p className="text-sm text-secondary mt-2">
-              © {new Date().getFullYear()} Makazi Fumigation. All rights
-              reserved.
+              © {new Date().getFullYear()}{" "}
+              {language === "sw"
+                ? "Makazi Fumigation. Haki zote zimehifadhiwa."
+                : "Makazi Fumigation. All rights reserved."}
             </p>
           </div>
 

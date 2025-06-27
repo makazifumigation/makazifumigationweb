@@ -10,7 +10,7 @@ import { collection, getDocs, orderBy, query, where } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 // import { blogs } from "@/contents/blogs";
 
-const Blogs = () => {
+const Blogs = ({ language }) => {
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -48,11 +48,25 @@ const Blogs = () => {
     <section className="py-20">
       <div className="container max-w-7xl mx-auto px-4">
         <motion.h2
-          className="text-3xl font-bold mb-12 text-center"
+          className="text-3xl font-bold mb-4 text-center"
           {...fadeInUp}
         >
-          Latest Blog Posts
+          {language === "sw" ? "Makala Zetu" : "Our Blog Posts"}
         </motion.h2>
+
+        <motion.p
+          className="text-xl text-gray-600 dark:text-gray-300 mb-8 px-6 text-center"
+          {...fadeInUp}
+          transition={{ delay: 0.4 }}
+        >
+          {language === "sw"
+            ? "Mbali na juhudi zetu kudhibiti wadudu,"
+            : "Besides our efforts in pest control, "}
+          <br />
+          {language === "sw"
+            ? "tunaelimisha umma kuhusu umuhimu wake."
+            : "we educate the public on its importance."}
+        </motion.p>
 
         <motion.div
           className="grid grid-cols-1 md:grid-cols-3 gap-8"
@@ -120,7 +134,7 @@ const Blogs = () => {
               href="/blogs"
               className="inline-block bg-primary text-white px-8 py-3 rounded-lg hover:bg-primary/90 transition-colors"
             >
-              View All Posts
+              {language === "sw" ? "Makala Zaidi" : "More Posts"}
             </Link>
           </motion.div>
         </motion.div>

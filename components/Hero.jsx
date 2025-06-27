@@ -6,7 +6,8 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-const Hero = ({ contentData }) => {
+const Hero = ({ contentData, language }) => {
+  // const { language } = useLanguage();
   return (
     <section className="py-16">
       <div className="container md:flex md:items-center max-w-7xl mx-auto px-4">
@@ -43,10 +44,14 @@ const Hero = ({ contentData }) => {
             {...fadeInUp}
             transition={{ delay: 0.4 }}
           >
-            Think pest control, think Makazi Fumigation.
+            {language === "sw"
+              ? "Fikiria udhibiti wa wadudu, fikiria Makazi Fumigation."
+              : "Think pest control, think Makazi Fumigation."}
             <span className="block md:hidden lg:block">
               {" "}
-              Your trusted partner in safe and effective solutions.
+              {language === "sw"
+                ? "Msaada wako wa kuaminika katika uluhishi madhubuti."
+                : "Your trusted partner in safe and effective solutions."}
             </span>
           </motion.p>
           <motion.div
@@ -95,7 +100,7 @@ const Hero = ({ contentData }) => {
                 href="/projects"
                 className="bg-primary inline-block w-full md:w-auto text-white px-8 py-2 rounded-lg hover:bg-primary/90 transition-colors"
               >
-                View Projects
+                {language === "sw" ? "Kazi Zetu" : "View Projects"}
               </Link>
             </motion.div>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -103,7 +108,7 @@ const Hero = ({ contentData }) => {
                 href="/contact"
                 className=" inline-block w-full bg-gray-500  md:w-auto text-gray-800 dark:text-white px-8 py-2 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
               >
-                Contact Us
+                {language === "sw" ? "Wasiliana Nasi" : "Contact Us"}
               </Link>
             </motion.div>
           </motion.div>

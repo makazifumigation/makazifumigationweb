@@ -13,6 +13,10 @@ import { WebContent } from "@/lib/AuthContext";
 
 import emailjs from "@emailjs/browser";
 
+// export async function generateStaticParams() {
+//   return [{ locale: "en" }, { locale: "sw" }];
+// }
+
 const page = () => {
   const { contentData, fetchContentData } = WebContent();
   const [formData, setFormData] = useState({
