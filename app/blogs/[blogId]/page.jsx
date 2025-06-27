@@ -81,7 +81,7 @@ const page = ({ params }) => {
   return (
     <div>
       <div className="container max-w-7xl py-16">
-        <div className="px-4 sm:px-6">
+        <div className="px-4">
           <div className="relative aspect-video mb-4 rounded-lg overflow-hidden">
             <Image
               src={content.blog_image}
