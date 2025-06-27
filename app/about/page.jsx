@@ -67,12 +67,12 @@ const page = () => {
           >
             {language === "sw"
               ? "At Makazi Fumigation and Hygiene Services, we believe that clean, safe, and healthy environments are essential for the well-being of individuals, families, and communities."
-              : "Think pest control, think Makazi Fumigation."}
+              : "At Makazi Fumigation and Hygiene Services, we believe that clean, safe, and healthy environments are essential for the well-being of individuals, families, and communities."}
             <span className="block md:hidden lg:block">
               {" "}
               {language === "sw"
                 ? " Based in Tanzania, we provide professional fumigation, pest control, and hygiene services designed to meet the needs of residential homes, institutions, commercial properties, and industrial facilities."
-                : "Your trusted partner in safe and effective solutions."}
+                : " Based in Tanzania, we provide professional fumigation, pest control, and hygiene services designed to meet the needs of residential homes, institutions, commercial properties, and industrial facilities."}
             </span>
           </motion.p>
         </div>
