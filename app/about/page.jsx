@@ -8,6 +8,8 @@ import {
   FaBuilding,
   FaBug,
   FaIndustry,
+  FaRocket,
+  FaEye,
 } from "react-icons/fa";
 import { motion } from "framer-motion";
 import {
@@ -78,15 +80,33 @@ const page = () => {
 
       {/* Skills Section */}
       <motion.section
-        className="mb-16 px-4"
+        className="mb-16 mt-32 px-4"
         {...fadeIn}
         transition={{ delay: 0.2 }}
       >
-        <motion.h2 className="section-title mt-16" {...fadeInUp}>
-          Areas Of Focus
+        <motion.h2
+          className="text-3xl font-bold mb-4 text-center"
+          {...fadeInUp}
+        >
+          {language === "sw" ? "Historia Yetu" : "Our Story"}
         </motion.h2>
+
+        <motion.p
+          className="text-xl text-gray-600 dark:text-gray-300 mb-8 px-6 text-center"
+          {...fadeInUp}
+          transition={{ delay: 0.4 }}
+        >
+          {language === "sw"
+            ? "Makazi began as a simple opportunity to make a living."
+            : "Makazi began as a simple opportunity to make a living."}
+          <br />
+          {language === "sw"
+            ? "But over time, it became much more than that. It became a mission. "
+            : "But over time, it became much more than that. It became a mission. "}
+        </motion.p>
+
         <motion.div
-          className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6"
           variants={staggerContainer}
           initial="initial"
           animate="animate"
@@ -96,11 +116,12 @@ const page = () => {
             variants={fadeInUp}
             {...cardHover}
           >
-            <FaHome className="h-8 w-8 text-primary mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Homes</h3>
+            <FaRocket className="h-8 w-8 text-primary mb-4" />
+            <h3 className="text-xl font-semibold mb-2">Our Mission</h3>
             <p>
-              Kama unadhani unahitaji kuua wadudu nyumbani kwako, tupo
-              kukusaidia katika hilo.
+              To be a trusted leader in fumigation and hygiene services across
+              Tanzania, helping communities thrive in cleaner, safer
+              environments.
             </p>
           </motion.div>
 
@@ -109,24 +130,12 @@ const page = () => {
             variants={fadeInUp}
             {...cardHover}
           >
-            <FaBuilding className="h-8 w-8 text-primary mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Offices</h3>
+            <FaEye className="h-8 w-8 text-primary mb-4" />
+            <h3 className="text-xl font-semibold mb-2">Our Vission</h3>
             <p>
-              Kama unadhani unahitaji kuua wadudu ofisini kwako, tupo kukusaidia
-              katika hilo.
-            </p>
-          </motion.div>
-
-          <motion.div
-            className="bg-white dark:bg-dark/50 p-6 rounded-lg shadow-md"
-            variants={fadeInUp}
-            {...cardHover}
-          >
-            <FaIndustry className="h-8 w-8 text-primary mb-4" />
-            <h3 className="text-xl font-semibold mb-2">Industries</h3>
-            <p>
-              Kama unadhani unahitaji kuua wadudu kiwandani kwako, tupo
-              kukusaidia katika hilo.
+              To deliver professional, affordable, and reliable pest control and
+              hygiene solutions that improve the quality of life and support
+              public health.
             </p>
           </motion.div>
         </motion.div>
