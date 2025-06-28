@@ -6,7 +6,7 @@ import { fadeIn, fadeInUp } from "@/utils/animations";
 const Newsletter = ({ language }) => {
   return (
     <div className="container max-w-7xl mx-auto py-16">
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-8 items-center md:justify-between">
+      <div className="bg-gray-100 dark:bg-dark/50 rounded-2xl p-8 grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-8 items-center md:justify-between">
         <div className="md:col-span-2">
           <div className="w-full mx-auto text-center md:text-start">
             <motion.h1
