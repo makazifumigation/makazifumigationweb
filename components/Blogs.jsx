@@ -82,7 +82,7 @@ const Blogs = ({ language }) => {
               variants={fadeInUp}
               {...cardHoverSmall}
             >
-              <Link href={`/blogs/${blog.slug}`}>
+              <Link href={`/blogs/${blog.blog_id}`}>
                 <motion.h3
                   className="text-xl font-semibold mb-2 hover:text-primary transition-colors  line-clamp-1"
                   whileHover={{ x: 5 }}
