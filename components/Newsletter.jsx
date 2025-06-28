@@ -6,7 +6,7 @@ import { fadeIn, fadeInUp } from "@/utils/animations";
 const Newsletter = ({ language }) => {
   return (
     <div className="container max-w-7xl mx-auto py-16">
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-8 items-center">
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-8 items-center md:justify-between">
         <div className="md:col-span-2">
           <div className="w-full mx-auto text-center md:text-start">
             <motion.h1
@@ -29,7 +29,7 @@ const Newsletter = ({ language }) => {
               transition={{ delay: 0.4 }}
             >
               {language === "sw"
-                ? "Makazi inamaana sawa na 'Nyumbani' tunajali kila eneo tunalohudumia kama la kwetu. - Kiezera, Mkurugenzi wa Makazi Fumigation"
+                ? "Makazi ina maananisha 'nyumbani' tunajali kila mahali tunapo hudumia kwetu. - Kiezera, Mkurugenzi wa Makazi Fumigation"
                 : "Makazi means “home” we treat every space, we serve like our own. - Kiezera, Director Makazi Fumigation"}
               {/* <span className="block md:hidden lg:block">
                 {" "}
@@ -40,9 +40,9 @@ const Newsletter = ({ language }) => {
             </motion.p>
           </div>
         </div>
-        <div className="">
+        <div className="mx-auto md:mr-0">
           <Image
-            className="object-cover aspect-square rounded-2xl md:rounded-full p-2 bg-gray-300 dark:bg-white"
+            className="object-cover h-64 w-64 rounded-full p-2 bg-gray-300 dark:bg-white"
             src="/images/founder.jpg"
             height={1500}
             width={1500}
