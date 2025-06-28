@@ -14,6 +14,7 @@ import { db } from "@/lib/firebase";
 import Link from "next/link";
 import Image from "next/image";
 import { WebContent } from "@/lib/AuthContext";
+import Loader from "@/components/Loader";
 
 const page = ({ params }) => {
   const { contentData } = WebContent();
@@ -64,7 +65,7 @@ const page = ({ params }) => {
   }, []);
 
   if (loading) {
-    return <div>Loading</div>;
+    return <Loader />;
   }
 
   if (!loading && !content) {
@@ -95,10 +96,10 @@ const page = ({ params }) => {
           <p className="text-3xl font-bold mb-4 text-start">
             {content.blog_title}
           </p>
-          <div className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-4">
+          <div className="mt-1 text-small-regular text-gray-500">
             {content.blog_summary}
           </div>
-          <div className="mt-1 text-small-regular text-gray-500">
+          <div className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-4">
             {content.blog_body}
           </div>
         </div>

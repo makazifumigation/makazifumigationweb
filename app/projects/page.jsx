@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import { collection, getDocs, orderBy, query, where } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 import { useLanguage } from "@/lib/LanguageContext";
+import Link from "next/link";
 
 const page = () => {
   const [projects, setProjects] = useState([]);
@@ -93,13 +94,15 @@ const page = () => {
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </div>
-            <motion.h3
-              className="text-xl font-semibold mb-2"
-              whileHover={{ x: 5 }}
-              transition={{ type: "spring", stiffness: 300 }}
-            >
-              {project.project_title}
-            </motion.h3>
+            <Link href={project.project_destination} target="_blank">
+              <motion.h3
+                className="text-xl font-semibold mb-2 hover:text-primary transition-colors  line-clamp-1"
+                whileHover={{ x: 5 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                {project.project_title}
+              </motion.h3>
+            </Link>
             <motion.p
               className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-4"
               initial={{ opacity: 0 }}
