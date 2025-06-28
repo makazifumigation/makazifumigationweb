@@ -29,7 +29,7 @@ const Newsletter = ({ language }) => {
               transition={{ delay: 0.4 }}
             >
               {language === "sw"
-                ? "Makazi ina maananisha 'nyumbani' tunajali kila mahali tunapo hudumia kwetu. - Kiezera, Mkurugenzi wa Makazi Fumigation"
+                ? "Makazi humaananisha 'nyumbani' tunajali kila mahali tunapo hudumia kama kwetu. - Kiezera, Mkurugenzi wa Makazi Fumigation"
                 : "Makazi means “home” we treat every space, we serve like our own. - Kiezera, Director Makazi Fumigation"}
               {/* <span className="block md:hidden lg:block">
                 {" "}
