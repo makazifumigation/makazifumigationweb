@@ -1,19 +1,22 @@
 import React from "react";
 
-const Newsletter = () => {
+const Newsletter = ({ language }) => {
   return (
     <section className="py-20">
       <div className="bg-white dark:bg-dark/50 rounded-lg shadow-md overflow-hidden animate-slide-up">
-        <div className="p-8 md:p-12">
-          <div className="max-w-7xl mx-auto">
+        <div className="py-8 md:py-12">
+          <div className="container max-w-7xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
               <div>
                 <h2 className="text-2xl font-bold mb-4">
-                  Subscribe To Our Newsletter
+                  {language === "sw"
+                    ? "Jiunge Kupokea Makala Zetu"
+                    : "Subscribe To Our Newsletter"}
                 </h2>
                 <p className="text-gray-600 dark:text-gray-300">
-                  Get the latest updates and insights from Makazi Fumigation,
-                  delivered straight to your inbox.
+                  {language === "sw"
+                    ? "Pata makala mpya kutoka Makazi Fumigation, moja kwa moja kwenye barua pepe yako."
+                    : "Get the latest updates and insights from Makazi Fumigation, delivered straight to your inbox."}
                 </p>
               </div>
               <form className="flex flex-col sm:flex-row gap-4">

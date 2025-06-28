@@ -10,7 +10,7 @@ const Hero = ({ contentData, language }) => {
   // const { language } = useLanguage();
   return (
     <section className="py-16">
-      <div className="container md:flex md:items-center max-w-7xl mx-auto px-4">
+      <div className="container md:flex md:items-center max-w-7xl mx-auto">
         <div className="w-full md:w-1/2">
           <motion.div
             className="flex justify-center items-center"

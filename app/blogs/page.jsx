@@ -8,10 +8,13 @@ import { fadeInUp, staggerContainer, cardHoverSmall } from "@/utils/animations";
 import { useEffect, useState } from "react";
 import { collection, getDocs, orderBy, query, where } from "firebase/firestore";
 import { db } from "@/lib/firebase";
+import { useLanguage } from "@/lib/LanguageContext";
+import { calculateReadTime } from "@/lib/functions";
 
 const page = () => {
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
+  const { language } = useLanguage();
 
   const getProjects = async () => {
     const dbInstance = collection(db, "Blogs");
@@ -46,13 +49,27 @@ const page = () => {
   return (
     <div className="container max-w-7xl mx-auto py-12">
       <motion.h1
-        className="text-4xl font-bold mb-8 text-center"
+        className="text-4xl font-bold mb-4 text-center"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        Blog Posts
+        {language === "sw" ? "Makala Zetu" : "Blog Posts"}
       </motion.h1>
+
+      <motion.p
+        className="text-xl text-gray-600 dark:text-gray-300 mb-8 px-6 text-center"
+        {...fadeInUp}
+        transition={{ delay: 0.4 }}
+      >
+        {language === "sw"
+          ? "Mbali na juhudi zetu kudhibiti wadudu,"
+          : "Besides our efforts in pest control, "}
+        <br />
+        {language === "sw"
+          ? "tunaelimisha umma kuhusu umuhimu wake."
+          : "we educate the public on its importance."}
+      </motion.p>
 
       <motion.div
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
@@ -75,7 +92,7 @@ const page = () => {
               >
                 <Link
                   href={`/blogs/${blog.blog_id}`}
-                  className="hover:text-primary transition-colors"
+                  className="hover:text-primary transition-colors line-clamp-1"
                 >
                   {blog.blog_title}
                 </Link>
@@ -101,7 +118,15 @@ const page = () => {
                   whileHover={{ scale: 1.05 }}
                 >
                   <FaCalendarAlt className="h-4 w-4" />
-                  <span>{new Date(blog.date).toLocaleDateString()}</span>
+                  <span>
+                    {blog.blog_submitted_time
+                      ?.toDate()
+                      .toLocaleDateString("en-GB", {
+                        day: "2-digit",
+                        month: "short",
+                        year: "numeric",
+                      })}
+                  </span>
                 </motion.div>
 
                 <motion.div
@@ -109,7 +134,7 @@ const page = () => {
                   whileHover={{ scale: 1.05 }}
                 >
                   <FaClock className="h-4 w-4" />
-                  <span>{blog.readTime}</span>
+                  <span>{calculateReadTime(blog.blog_body)}</span>
                 </motion.div>
               </motion.div>
             </div>

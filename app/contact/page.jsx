@@ -12,6 +12,8 @@ import {
 import { WebContent } from "@/lib/AuthContext";
 
 import emailjs from "@emailjs/browser";
+import Loader from "@/components/Loader";
+import { useLanguage } from "@/lib/LanguageContext";
 
 // export async function generateStaticParams() {
 //   return [{ locale: "en" }, { locale: "sw" }];
@@ -19,6 +21,7 @@ import emailjs from "@emailjs/browser";
 
 const page = () => {
   const { contentData, fetchContentData } = WebContent();
+  const { language } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -60,23 +63,26 @@ const page = () => {
   };
 
   if (!contentData) {
-    return <div>Loading</div>;
+    return <Loader />;
   }
 
   return (
-    <div className="container max-w-7xl mx-auto py-12">
+    <div className="container max-w-7xl mx-auto py-12 tracking-wide">
       <motion.h1 className="text-4xl font-bold mb-8 text-center" {...fadeInUp}>
-        Contact Us
+        {language === "sw" ? "Wasiliana Nasi" : "Contact Us"}
       </motion.h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         {/* Contact Information */}
         <motion.div className="space-y-8" {...slideInLeft}>
           <motion.div {...fadeInUp}>
-            <h2 className="text-2xl font-semibold mb-4">Get in Touch</h2>
+            <h2 className="text-2xl font-semibold mb-4">
+              {language === "sw" ? "Mawasiliano Yetu" : "Get in Touch"}
+            </h2>
             <p className="text-secondary">
-              We are just one click away, just send us a message and we will
-              respond as soon as possible.
+              {language === "sw"
+                ? "Tupo karibu nawe, tutumie ujumbe wako nasi tutajibu ujumbe wako mapema kadri ya uwezo wetu."
+                : "We are just one click away, just send us a message and we will respond as soon as possible."}
             </p>
           </motion.div>
 
@@ -94,7 +100,9 @@ const page = () => {
             >
               <FaEnvelope className="h-6 w-6 text-primary" />
               <div>
-                <h3 className="font-semibold">Email</h3>
+                <h3 className="font-semibold">
+                  {language === "sw" ? "Barua Pepe" : "Email"}
+                </h3>
                 <a
                   href={`mailto:${contentData.contact_email}`}
                   className="text-secondary hover:text-primary"
@@ -112,7 +120,9 @@ const page = () => {
             >
               <FaPhone className="h-6 w-6 text-primary" />
               <div>
-                <h3 className="font-semibold">Phone</h3>
+                <h3 className="font-semibold">
+                  {language === "sw" ? "Simu" : "Phone"}
+                </h3>
                 <a
                   href={`tel:${contentData.contact_phone}`}
                   className="text-secondary hover:text-primary"
@@ -130,7 +140,9 @@ const page = () => {
             >
               <FaMapMarkerAlt className="h-6 w-6 text-primary" />
               <div>
-                <h3 className="font-semibold">Location</h3>
+                <h3 className="font-semibold">
+                  {language === "sw" ? "Mahali" : "Location"}
+                </h3>
                 <p className="text-secondary">{contentData.contact_location}</p>
               </div>
             </motion.div>
@@ -151,7 +163,7 @@ const page = () => {
           >
             <motion.div variants={fadeInUp}>
               <label htmlFor="name" className="block text-sm font-medium mb-2">
-                Name
+                {language === "sw" ? "Jina kamili" : "Full Name"}
               </label>
               <input
                 type="text"
@@ -166,7 +178,7 @@ const page = () => {
 
             <motion.div variants={fadeInUp}>
               <label htmlFor="email" className="block text-sm font-medium mb-2">
-                Email
+                {language === "sw" ? "Barua pepe" : "Email address"}
               </label>
               <input
                 type="email"
@@ -184,7 +196,7 @@ const page = () => {
                 htmlFor="message"
                 className="block text-sm font-medium mb-2"
               >
-                Message
+                {language === "sw" ? "Ujumbe" : "Message"}
               </label>
               <textarea
                 id="message"
@@ -204,7 +216,13 @@ const page = () => {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
             >
-              {status === "loading" ? "Sending..." : "Send Message"}
+              {language === "sw"
+                ? status === "loading"
+                  ? "Inatuma..."
+                  : "Tuma Ujumbe"
+                : status === "loading"
+                ? "Sending..."
+                : "Send Message"}
             </motion.button>
 
             {status === "success" && (
@@ -213,7 +231,9 @@ const page = () => {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
               >
-                Message sent successfully!
+                {language === "sw"
+                  ? "Ujumbe umetumwa"
+                  : "Message sent successfully!"}
               </motion.p>
             )}
 
@@ -223,7 +243,9 @@ const page = () => {
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
               >
-                Failed to send message. Please try again.
+                {language === "sw"
+                  ? "Imeshindwa kutuma ujumbe"
+                  : "Failed to send message."}
               </motion.p>
             )}
           </motion.form>

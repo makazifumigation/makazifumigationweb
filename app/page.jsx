@@ -1,6 +1,7 @@
 "use client";
 import Blogs from "@/components/Blogs";
 import Hero from "@/components/Hero";
+import Loader from "@/components/Loader";
 import Newsletter from "@/components/Newsletter";
 import Projects from "@/components/Projects";
 import Sponsors from "@/components/Sponsors";
@@ -14,17 +15,7 @@ export default function Home() {
   const { language } = useLanguage();
 
   if (!contentData) {
-    return (
-      <div className="flex items-center justify-center h-80">
-        <Image
-          className="animate-spin h-6 w-6"
-          src="loading.svg"
-          height={48}
-          width={48}
-          alt="loading"
-        />
-      </div>
-    );
+    return <Loader />;
   }
 
   return (

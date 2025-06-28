@@ -45,7 +45,7 @@ const Projects = ({ language }) => {
 
   return (
     <section className="py-20">
-      <div className="container max-w-7xl mx-auto px-4">
+      <div className="container max-w-7xl mx-auto">
         <motion.h2
           className="text-3xl font-bold mb-4 text-center"
           {...fadeInUp}
@@ -67,7 +67,7 @@ const Projects = ({ language }) => {
         </motion.p>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           variants={staggerContainer}
           initial="initial"
           animate="animate"

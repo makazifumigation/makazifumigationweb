@@ -8,6 +8,7 @@ import { fadeInUp, staggerContainer, cardHoverSmall } from "@/utils/animations";
 import { useEffect, useState } from "react";
 import { collection, getDocs, orderBy, query, where } from "firebase/firestore";
 import { db } from "@/lib/firebase";
+import { calculateReadTime } from "@/lib/functions";
 // import { blogs } from "@/contents/blogs";
 
 const Blogs = ({ language }) => {
@@ -46,7 +47,7 @@ const Blogs = ({ language }) => {
 
   return (
     <section className="py-20">
-      <div className="container max-w-7xl mx-auto px-4">
+      <div className="container max-w-7xl mx-auto">
         <motion.h2
           className="text-3xl font-bold mb-4 text-center"
           {...fadeInUp}
@@ -69,7 +70,7 @@ const Blogs = ({ language }) => {
         </motion.p>
 
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           variants={staggerContainer}
           initial="initial"
           animate="animate"
@@ -83,7 +84,7 @@ const Blogs = ({ language }) => {
             >
               <Link href={`/blogs/${blog.slug}`}>
                 <motion.h3
-                  className="text-xl font-semibold mb-2 hover:text-primary transition-colors"
+                  className="text-xl font-semibold mb-2 hover:text-primary transition-colors  line-clamp-1"
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
@@ -109,14 +110,20 @@ const Blogs = ({ language }) => {
                   whileHover={{ scale: 1.05 }}
                 >
                   <FaCalendarAlt className="mr-2" />
-                  {new Date(blog.date).toLocaleDateString()}
+                  {blog.blog_submitted_time
+                    ?.toDate()
+                    .toLocaleDateString("en-GB", {
+                      day: "2-digit",
+                      month: "short",
+                      year: "numeric",
+                    })}
                 </motion.span>
                 <motion.span
                   className="flex items-center"
                   whileHover={{ scale: 1.05 }}
                 >
                   <FaClock className="mr-2" />
-                  {blog.readTime}
+                  <span>{calculateReadTime(blog.blog_body)}</span>
                 </motion.span>
               </motion.div>
             </motion.article>
