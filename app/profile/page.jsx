@@ -103,7 +103,7 @@ const page = () => {
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
-                href="https://firebasestorage.googleapis.com/v0/b/makazi-fumigation.firebasestorage.app/o/bp%2FMakazi%20Fumigation%20-final%20BP.pdf?alt=media&token=2266cce4-75f2-4fff-b868-fb56775ce05b"
+                href="https://firebasestorage.googleapis.com/v0/b/makazi-fumigation.firebasestorage.app/o/bp%2FMakaziFumigationBusinessProfile.pdf?alt=media&token=a9675704-a991-40a1-bd96-9ed716cfd10e"
                 target="_blank"
                 className="bg-primary inline-block w-full md:w-auto text-white px-8 py-2 rounded-lg hover:bg-primary/90 transition-colors"
               >
