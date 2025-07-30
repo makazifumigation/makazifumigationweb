@@ -9,7 +9,6 @@ import {
   slideInLeft,
   slideInRight,
 } from "@/utils/animations";
-import { WebContent } from "@/lib/AuthContext";
 
 import emailjs from "@emailjs/browser";
 import Loader from "@/components/Loader";

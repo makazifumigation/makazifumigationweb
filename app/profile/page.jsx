@@ -9,7 +9,6 @@ import {
   slideInLeft,
   slideInRight,
 } from "@/utils/animations";
-import { WebContent } from "@/lib/AuthContext";
 
 import emailjs from "@emailjs/browser";
 import Loader from "@/components/Loader";
@@ -22,7 +21,6 @@ import Image from "next/image";
 // }
 
 const page = () => {
-  const { contentData, fetchContentData } = WebContent();
   const { language } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
@@ -63,10 +61,6 @@ const page = () => {
       [e.target.name]: e.target.value,
     }));
   };
-
-  if (!contentData) {
-    return <Loader />;
-  }
 
   return (
     <div className="container max-w-7xl mx-auto py-12 tracking-wide">
