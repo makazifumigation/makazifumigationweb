@@ -20,7 +20,6 @@ import { useLanguage } from "@/lib/LanguageContext";
 // }
 
 const page = () => {
-  const { contentData, fetchContentData } = WebContent();
   const { language } = useLanguage();
   const [formData, setFormData] = useState({
     name: "",
@@ -62,10 +61,6 @@ const page = () => {
     }));
   };
 
-  if (!contentData) {
-    return <Loader />;
-  }
-
   return (
     <div className="container max-w-7xl mx-auto py-12 tracking-wide">
       <motion.h1 className="text-4xl font-bold mb-8 text-center" {...fadeInUp}>
@@ -104,10 +99,10 @@ const page = () => {
                   {language === "sw" ? "Barua Pepe" : "Email"}
                 </h3>
                 <a
-                  href={`mailto:${contentData.contact_email}`}
+                  href={`mailto:business@makazifumigation.co.tz`}
                   className="text-secondary hover:text-primary"
                 >
-                  {contentData.contact_email}
+                  business@makazifumigation.co.tz
                 </a>
               </div>
             </motion.div>
@@ -124,10 +119,10 @@ const page = () => {
                   {language === "sw" ? "Simu" : "Phone"}
                 </h3>
                 <a
-                  href={`tel:${contentData.contact_phone}`}
+                  href={`tel:255685482846`}
                   className="text-secondary hover:text-primary"
                 >
-                  {contentData.contact_phone}
+                  +255685482846
                 </a>
               </div>
             </motion.div>
@@ -143,7 +138,9 @@ const page = () => {
                 <h3 className="font-semibold">
                   {language === "sw" ? "Mahali" : "Location"}
                 </h3>
-                <p className="text-secondary">{contentData.contact_location}</p>
+                <p className="text-secondary">
+                  📍Dar es salaam 📍Morogoro📍Dodoma
+                </p>
               </div>
             </motion.div>
           </motion.div>
