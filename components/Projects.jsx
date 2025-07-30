@@ -51,20 +51,20 @@ const Projects = ({ language }) => {
           className="text-3xl font-bold mb-4 text-center"
           {...fadeInUp}
         >
-          {language === "sw" ? "Kazi Tulizo Fanya" : "Featured Projects"}
+          {language === "sw" ? "Our Blogs" : "Makala Zetu"}
         </motion.h2>
         <motion.p
-          className="text-xl text-gray-600 dark:text-gray-300 mb-8 px-6 text-center"
+          className="text-xl text-gray-600 mb-8 px-6 text-center"
           {...fadeInUp}
           transition={{ delay: 0.4 }}
         >
           {language === "sw"
-            ? "Tumegusa maisha ya watu sehemu mbalimbali."
-            : "We’ve made a meaningful impact in the community."}
+            ? "Mbali na juhudi zetu kudhibiti wadudu,"
+            : "Besides our efforts in pest control, "}
           <br />
           {language === "sw"
-            ? "Hizi ni miongoni mwa kazi tulizofanya"
-            : "Here are some of our most notable projects."}
+            ? "tunaelimisha umma kuhusu umuhimu wake."
+            : "we educate the public on its importance."}
         </motion.p>
 
         <motion.div
@@ -76,7 +76,7 @@ const Projects = ({ language }) => {
           {projects.map((project) => (
             <motion.article
               key={project.project_id}
-              className="bg-white dark:bg-dark/50 rounded-3xl border-2 border-gray-100 dark:border-dark p-6"
+              className="bg-white rounded-3xl border-2 border-gray-100 p-6"
               variants={fadeInUp}
               {...cardHoverSmall}
             >
@@ -99,7 +99,7 @@ const Projects = ({ language }) => {
                 </motion.h3>
               </Link>
               <motion.p
-                className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-4"
+                className="text-gray-600 mb-4 line-clamp-4"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2 }}

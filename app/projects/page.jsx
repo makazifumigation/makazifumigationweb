@@ -81,7 +81,7 @@ const page = () => {
         {projects.map((project, index) => (
           <motion.article
             key={project.project_id}
-            className="bg-white dark:bg-dark/50 rounded-3xl border-2 border-gray-100 dark:border-dark p-6"
+            className="bg-white rounded-3xl border-2 border-gray-100 p-6"
             variants={fadeInUp}
             {...cardHoverSmall}
           >
@@ -104,7 +104,7 @@ const page = () => {
               </motion.h3>
             </Link>
             <motion.p
-              className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-4"
+              className="text-gray-600 mb-4 line-clamp-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2 }}

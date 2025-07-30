@@ -6,7 +6,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
-const Hero = ({ contentData, language }) => {
+const Hero = ({ language }) => {
   // const { language } = useLanguage();
   return (
     <section className="py-16">
@@ -18,8 +18,8 @@ const Hero = ({ contentData, language }) => {
             transition={{ delay: 0.2 }}
           >
             <iframe
-              className="mx-auto rounded-2xl w-full aspect-video p-2 bg-gray-300 dark:bg-white"
-              src={contentData.hero_url}
+              className="mx-auto rounded-2xl w-full aspect-video p-2 bg-gray-300"
+              src="https://www.youtube.com/embed/jI_FD8foldE"
               allowFullScreen
             />
           </motion.div>
@@ -40,7 +40,7 @@ const Hero = ({ contentData, language }) => {
             </motion.span>
           </motion.h1>
           <motion.p
-            className="text-xl text-gray-600 dark:text-gray-300 mb-8 px-6"
+            className="text-xl text-gray-600 mb-8 px-6"
             {...fadeInUp}
             transition={{ delay: 0.4 }}
           >
@@ -60,30 +60,30 @@ const Hero = ({ contentData, language }) => {
             transition={{ delay: 0.5 }}
           >
             <motion.a
-              href={contentData.instagram_profile}
+              href="https://www.instagram.com/makazi_fumigation"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-2xl text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary transition-colors"
+              className="text-2xl text-gray-600 hover:text-primary transition-colors"
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.9 }}
             >
               <FaInstagram />
             </motion.a>
             <motion.a
-              href={contentData.youtube_profile}
+              href="/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-2xl text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary transition-colors"
+              className="text-2xl text-gray-600 hover:text-primary  transition-colors"
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.9 }}
             >
               <FaYoutube />
             </motion.a>
             <motion.a
-              href={`https://wa.me/${contentData.whatsapp_number}`}
+              href={`https://wa.me/255685482846`}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-2xl text-gray-600 hover:text-primary dark:text-gray-300 dark:hover:text-primary transition-colors"
+              className="text-2xl text-gray-600 hover:text-primary transition-colors"
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.9 }}
             >
@@ -91,22 +91,22 @@ const Hero = ({ contentData, language }) => {
             </motion.a>
           </motion.div>
           <motion.div
-            className="flex flex-row justify-center gap-4"
+            className="flex flex-row justify-center gap-4 tracking-wide"
             {...fadeInUp}
             transition={{ delay: 0.6 }}
           >
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
-                href="/projects"
+                href="/about"
                 className="bg-primary inline-block w-full md:w-auto text-white px-8 py-2 rounded-lg hover:bg-primary/90 transition-colors"
               >
-                {language === "sw" ? "Kazi Zetu" : "View Projects"}
+                {language === "sw" ? "Kuhusu Sisi" : "About Us"}
               </Link>
             </motion.div>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Link
                 href="/contact"
-                className=" inline-block w-full bg-gray-500  md:w-auto text-gray-800 dark:text-white px-8 py-2 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
+                className=" inline-block w-full bg-white  md:w-auto text-primary px-8 py-2 rounded-lg hover:bg-gray-300 transition-colors border border-primary"
               >
                 {language === "sw" ? "Wasiliana Nasi" : "Contact Us"}
               </Link>

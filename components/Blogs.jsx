@@ -56,7 +56,7 @@ const Blogs = ({ language }) => {
         </motion.h2>
 
         <motion.p
-          className="text-xl text-gray-600 dark:text-gray-300 mb-8 px-6 text-center"
+          className="text-xl text-gray-600 mb-8 px-6 text-center"
           {...fadeInUp}
           transition={{ delay: 0.4 }}
         >
@@ -78,7 +78,7 @@ const Blogs = ({ language }) => {
           {blogs.map((blog) => (
             <motion.article
               key={blog.blog_title}
-              className="bg-white dark:bg-dark/50 rounded-lg shadow-md p-6"
+              className="bg-white rounded-lg shadow-md p-6"
               variants={fadeInUp}
               {...cardHoverSmall}
             >
@@ -92,7 +92,7 @@ const Blogs = ({ language }) => {
                 </motion.h3>
               </Link>
               <motion.p
-                className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3"
+                className="text-gray-600 mb-4 line-clamp-3"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2 }}
@@ -100,7 +100,7 @@ const Blogs = ({ language }) => {
                 {blog.blog_summary}
               </motion.p>
               <motion.div
-                className="flex items-center text-sm text-gray-500 dark:text-gray-400 space-x-4"
+                className="flex items-center text-sm text-gray-500 space-x-4"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.3 }}

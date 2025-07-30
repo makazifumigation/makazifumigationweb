@@ -1,5 +1,4 @@
 "use client";
-import { useTheme } from "@/lib/ThemeContext";
 import Link from "next/link";
 import {
   SunIcon,
@@ -13,24 +12,20 @@ import Image from "next/image";
 import { useLanguage } from "@/lib/LanguageContext";
 
 const Navbar = () => {
-  const { theme, toggleTheme } = useTheme();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const { language } = useLanguage();
+  const { language, toggleLanguage } = useLanguage();
 
   const labels = {
     en: {
       home: "Home",
-      about: "About",
-      projects: "Projects",
-      blogs: "Blogs",
-      contact: "Contact",
+      about: "About Us",
+      contact: "Contact Us",
     },
     sw: {
       home: "Nyumbani",
       about: "Kuhusu Sisi",
-      projects: "Kazi Zetu",
-      blogs: "Makala",
-      contact: "Mawasiliano",
+
+      contact: "Wasiliana Nasi",
     },
   };
 
@@ -41,13 +36,11 @@ const Navbar = () => {
   const menuItems = [
     { href: "/", label: labels[language].home },
     { href: "/about", label: labels[language].about },
-    { href: "/projects", label: labels[language].projects },
-    { href: "/blogs", label: labels[language].blogs },
     { href: "/contact", label: labels[language].contact },
   ];
 
   return (
-    <nav className="fixed w-full bg-white/80 dark:bg-dark/80 backdrop-blur-sm z-50">
+    <nav className="fixed w-full bg-white z-50 border-b border-gray-200">
       <div className="container max-w-7xl mx-auto">
         <div className="flex items-center justify-between h-16 tracking-wide">
           <Link href="/" className="text-xl font-bold text-primary">
@@ -71,23 +64,35 @@ const Navbar = () => {
                 {item.label}
               </Link>
             ))}
-            <motion.button
-              onClick={toggleTheme}
-              className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              {theme === "dark" ? (
-                <SunIcon className="h-5 w-5" />
-              ) : (
-                <MoonIcon className="h-5 w-5" />
-              )}
-            </motion.button>
+            <span className="inline-flex divide-x divide-gray-300 overflow-hidden rounded-full border border-primary bg-white">
+              <button
+                type="button"
+                onClick={() => toggleLanguage("en")}
+                className={`px-3 py-1.5 text-sm font-medium  transition-colors ${
+                  language === "en"
+                    ? "bg-primary text-white"
+                    : "bg-white text-gray-700"
+                } focus:relative cursor-pointer`}
+              >
+                English
+              </button>
+              <button
+                type="button"
+                onClick={() => toggleLanguage("sw")}
+                className={`px-3 py-1.5 text-sm font-medium transition-colors ${
+                  language === "sw"
+                    ? "bg-primary text-white"
+                    : "bg-white text-gray-700"
+                } focus:relative cursor-pointer`}
+              >
+                Swahili
+              </button>
+            </span>
           </div>
 
           {/* Mobile Menu Button */}
           <motion.button
-            className="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+            className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
             onClick={toggleMobileMenu}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
@@ -132,25 +137,30 @@ const Navbar = () => {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: menuItems.length * 0.1 }}
                 >
-                  <button
-                    onClick={() => {
-                      toggleTheme();
-                      setIsMobileMenuOpen(false);
-                    }}
-                    className="flex items-center py-2 hover:text-primary transition-colors"
-                  >
-                    {theme === "dark" ? (
-                      <>
-                        <SunIcon className="h-5 w-5 mr-2" />
-                        Light Mode
-                      </>
-                    ) : (
-                      <>
-                        <MoonIcon className="h-5 w-5 mr-2" />
-                        Dark Mode
-                      </>
-                    )}
-                  </button>
+                  <span className="inline-flex divide-x divide-gray-300 overflow-hidden rounded-full border border-primary bg-white">
+                    <button
+                      type="button"
+                      onClick={() => toggleLanguage("en")}
+                      className={`px-3 py-1.5 text-sm font-medium  transition-colors ${
+                        language === "en"
+                          ? "bg-primary text-white"
+                          : "bg-white text-gray-700"
+                      } focus:relative cursor-pointer`}
+                    >
+                      English
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => toggleLanguage("sw")}
+                      className={`px-3 py-1.5 text-sm font-medium transition-colors ${
+                        language === "sw"
+                          ? "bg-primary text-white"
+                          : "bg-white text-gray-700"
+                      } focus:relative cursor-pointer`}
+                    >
+                      Swahili
+                    </button>
+                  </span>
                 </motion.div>
               </div>
             </motion.div>

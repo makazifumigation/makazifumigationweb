@@ -37,7 +37,7 @@ const page = () => {
             transition={{ delay: 0.2 }}
           >
             <Image
-              className="mx-auto rounded-2xl w-full aspect-video p-2 bg-gray-300 dark:bg-white object-cover"
+              className="mx-auto rounded-2xl w-full aspect-video p-2 bg-gray-300 object-cover"
               src="/images/about.jpg"
               height={1080}
               width={1920}
@@ -61,7 +61,7 @@ const page = () => {
             </motion.span>
           </motion.h1>
           <motion.p
-            className="text-lg text-gray-600 dark:text-gray-300 mb-8 px-6"
+            className="text-lg text-gray-600 mb-8 px-6"
             {...fadeInUp}
             transition={{ delay: 0.4 }}
           >
@@ -93,7 +93,7 @@ const page = () => {
           </motion.h2>
 
           <motion.p
-            className="text-xl text-gray-600 dark:text-gray-300 mb-8 text-center"
+            className="text-xl text-gray-600 mb-8 text-center"
             {...fadeInUp}
             transition={{ delay: 0.4 }}
           >
@@ -113,7 +113,7 @@ const page = () => {
             animate="animate"
           >
             <motion.div
-              className="bg-white dark:bg-dark/50 p-6 rounded-lg shadow-md"
+              className="bg-white p-6 rounded-lg shadow-md"
               variants={fadeInUp}
               {...cardHover}
             >
@@ -129,7 +129,7 @@ const page = () => {
             </motion.div>
 
             <motion.div
-              className="bg-white dark:bg-dark/50 p-6 rounded-lg shadow-md"
+              className="bg-white p-6 rounded-lg shadow-md"
               variants={fadeInUp}
               {...cardHover}
             >

@@ -58,7 +58,7 @@ const page = () => {
       </motion.h1>
 
       <motion.p
-        className="text-xl text-gray-600 dark:text-gray-300 mb-8 px-6 text-center"
+        className="text-xl text-gray-600 mb-8 px-6 text-center"
         {...fadeInUp}
         transition={{ delay: 0.4 }}
       >
@@ -80,7 +80,7 @@ const page = () => {
         {blogs.map((blog, index) => (
           <motion.article
             key={index}
-            className="bg-white dark:bg-dark/50 rounded-2xl shadow-md overflow-hidden"
+            className="bg-white rounded-2xl shadow-md overflow-hidden"
             variants={fadeInUp}
             {...cardHoverSmall}
           >

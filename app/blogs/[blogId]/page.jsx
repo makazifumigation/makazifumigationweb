@@ -99,7 +99,7 @@ const page = ({ params }) => {
           <div className="mt-1 text-small-regular text-gray-500">
             {content.blog_summary}
           </div>
-          <div className="text-gray-600 dark:text-gray-300 mb-4 line-clamp-4">
+          <div className="text-gray-600 mb-4 line-clamp-4">
             {content.blog_body}
           </div>
         </div>

@@ -1,10 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { ThemeProvider } from "@/lib/ThemeContext";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { AuthContextProvider } from "@/lib/AuthContext";
-import LanguageToggle from "@/components/LanguageToggle";
 import { LanguageProvider } from "@/lib/LanguageContext";
 
 const geistSans = Geist({
@@ -26,20 +23,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`bg-white transition-colors dark:bg-gray-900 dark:text-white ${geistSans.variable} ${geistMono.variable}`}
+        className={`bg-white transition-colors ${geistSans.variable} ${geistMono.variable}`}
       >
-        <ThemeProvider>
-          <AuthContextProvider>
-            <LanguageProvider>
-              <Navbar />
-              <main className="min-h-screen pt-24">
-                {children}
-                <LanguageToggle /> {/* Floating button here */}
-              </main>
-              <Footer />
-            </LanguageProvider>
-          </AuthContextProvider>
-        </ThemeProvider>
+        <LanguageProvider>
+          <Navbar />
+          <main className="min-h-screen pt-24">{children}</main>
+          <Footer />
+        </LanguageProvider>
       </body>
     </html>
   );

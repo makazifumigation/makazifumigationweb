@@ -1,5 +1,4 @@
 "use client";
-import { WebContent } from "@/lib/AuthContext";
 import { useLanguage } from "@/lib/LanguageContext";
 import Link from "next/link";
 import {
@@ -12,11 +11,10 @@ import {
 } from "react-icons/fa";
 
 const Footer = () => {
-  const { contentData, fetchContentData } = WebContent();
   const { language } = useLanguage();
 
   return (
-    <footer className="bg-white dark:bg-dark border-t border-gray-200 dark:border-gray-800">
+    <footer className="bg-white border-t border-gray-200">
       <div className="container max-w-7xl mx-auto py-8">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0 text-center md:text-start">
@@ -33,11 +31,7 @@ const Footer = () => {
 
           <div className="flex space-x-6">
             <a
-              href={
-                contentData
-                  ? contentData.instagram_profile
-                  : "https://www.instagram.com/"
-              }
+              href="https://www.instagram.com/makazi_fumigation"
               target="_blank"
               rel="noopener noreferrer"
               className="text-secondary hover:text-primary transition-colors"
@@ -45,11 +39,7 @@ const Footer = () => {
               <FaInstagram className="h-6 w-6" />
             </a>
             <a
-              href={
-                contentData
-                  ? contentData.youtube_profile
-                  : "https://www.youtube.com/"
-              }
+              href="#"
               target="_blank"
               rel="noopener noreferrer"
               className="text-secondary hover:text-primary transition-colors"
@@ -57,11 +47,7 @@ const Footer = () => {
               <FaYoutube className="h-6 w-6" />
             </a>
             <a
-              href={
-                contentData
-                  ? `https://wa.me/${contentData.whatsapp_number}`
-                  : "https://web.whatsapp.com/"
-              }
+              href="https://wa.me/255685482846"
               target="_blank"
               rel="noopener noreferrer"
               className="text-secondary hover:text-primary transition-colors"

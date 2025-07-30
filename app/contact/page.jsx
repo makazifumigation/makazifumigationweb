@@ -151,7 +151,7 @@ const page = () => {
 
         {/* Contact Form */}
         <motion.div
-          className="bg-white dark:bg-dark/50 p-6 rounded-lg shadow-md"
+          className="bg-white p-6 rounded-lg shadow-md"
           {...slideInRight}
         >
           <motion.form
@@ -172,7 +172,7 @@ const page = () => {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark focus:ring-2 focus:ring-primary focus:border-transparent"
+                className="w-full px-4 py-2 rounded-md border border-gray-300 bg-white focus:ring-2 focus:ring-primary focus:border-transparent"
               />
             </motion.div>
 
@@ -187,7 +187,7 @@ const page = () => {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark focus:ring-2 focus:ring-primary focus:border-transparent"
+                className="w-full px-4 py-2 rounded-md border border-gray-300 bg-white focus:ring-2 focus:ring-primary focus:border-transparent"
               />
             </motion.div>
 
@@ -205,7 +205,7 @@ const page = () => {
                 onChange={handleChange}
                 required
                 rows={4}
-                className="w-full px-4 py-2 rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-dark focus:ring-2 focus:ring-primary focus:border-transparent"
+                className="w-full px-4 py-2 rounded-md border border-gray-300 bg-white focus:ring-2 focus:ring-primary focus:border-transparent"
               />
             </motion.div>
 

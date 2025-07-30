@@ -88,7 +88,7 @@ const page = () => {
             {language === "sw" ? "Wa Biashara" : "Profile"}
           </motion.h1>
           <motion.p
-            className="text-xl text-gray-600 dark:text-gray-300 mb-8 px-6"
+            className="text-xl text-gray-600 mb-8 px-6"
             {...fadeInUp}
             transition={{ delay: 0.4 }}
           >
@@ -117,7 +117,7 @@ const page = () => {
 
         {/* Contact Form */}
         <motion.div
-          className="bg-white dark:bg-dark/50 p-6 rounded-2xl shadow-md"
+          className="bg-white p-6 rounded-2xl shadow-md"
           {...slideInRight}
         >
           <Image
