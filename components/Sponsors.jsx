@@ -32,7 +32,7 @@ const Sponsors = ({ language }) => {
               >
                 <Image
                   className="h-24 object-contain"
-                  src="/images/fHub.png"
+                  src="/sponsors/01.png"
                   height={512}
                   width={512}
                   alt="sponsor logo"
@@ -44,7 +44,7 @@ const Sponsors = ({ language }) => {
               >
                 <Image
                   className="h-24 object-contain"
-                  src="/images/fHub.png"
+                  src="/sponsors/02.png"
                   height={512}
                   width={512}
                   alt="sponsor logo"
@@ -56,7 +56,7 @@ const Sponsors = ({ language }) => {
               >
                 <Image
                   className="h-24 object-contain"
-                  src="/images/fHub.png"
+                  src="/sponsors/03.png"
                   height={512}
                   width={512}
                   alt="sponsor logo"
@@ -68,7 +68,7 @@ const Sponsors = ({ language }) => {
               >
                 <Image
                   className="h-24 object-contain"
-                  src="/images/fHub.png"
+                  src="/sponsors/04.png"
                   height={512}
                   width={512}
                   alt="sponsor logo"
@@ -80,7 +80,7 @@ const Sponsors = ({ language }) => {
               >
                 <Image
                   className="h-24 object-contain"
-                  src="/images/fHub.png"
+                  src="/sponsors/05.png"
                   height={512}
                   width={512}
                   alt="sponsor logo"
@@ -92,7 +92,7 @@ const Sponsors = ({ language }) => {
               >
                 <Image
                   className="h-24 object-contain"
-                  src="/images/fHub.png"
+                  src="/sponsors/06.png"
                   height={512}
                   width={512}
                   alt="sponsor logo"
