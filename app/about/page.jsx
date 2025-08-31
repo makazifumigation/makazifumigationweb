@@ -38,7 +38,7 @@ const page = () => {
           >
             <Image
               className="mx-auto rounded-2xl w-full aspect-video p-2 bg-gray-300 object-cover"
-              src="/images/about.jpg"
+              src="/images/mabout.jpg"
               height={1080}
               width={1920}
               alt="socials"
