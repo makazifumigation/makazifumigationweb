@@ -92,10 +92,10 @@ export default async function Home() {
         }}
         stats={stats}
         image={{
-          src: "/assets/images/hero.jpg",
+          src: "/assets/images/herox.jpg",
           alt: "Makazi technicians delivering fumigation services",
-          width: 840,
-          height: 840,
+          width: 1920,
+          height: 1080,
         }}
       />
 
@@ -257,7 +257,7 @@ export default async function Home() {
 
       <section className="section bg-[#5bad6a]/5">
         <Container>
-          <Card className="text-center space-y-6 max-w-3xl mx-auto">
+          <Card className="text-center space-y-6 w-full mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-[#1a1a1a]">
               Ready to eliminate pests and protect your brand?
             </h2>

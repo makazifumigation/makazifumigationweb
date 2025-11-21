@@ -89,7 +89,7 @@ export default function AboutPage() {
             </div>
             <div className="relative aspect-video lg:aspect-square rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="/assets/images/about-us.jpg"
+                src="/assets/images/aboutx.jpg"
                 alt="Makazi Fumigation technicians preparing equipment"
                 width={720}
                 height={540}

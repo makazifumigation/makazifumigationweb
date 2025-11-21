@@ -1,7 +1,7 @@
-import Image from 'next/image';
-import Button from '@/components/ui/Button';
-import Badge from '@/components/ui/Badge';
-import Container from '@/components/ui/Container';
+import Image from "next/image";
+import Button from "@/components/ui/Button";
+import Badge from "@/components/ui/Badge";
+import Container from "@/components/ui/Container";
 
 export default function Hero({
   eyebrow,
@@ -17,9 +17,7 @@ export default function Hero({
       <Container>
         <div className="grid gap-12 lg:grid-cols-[1fr_480px] lg:items-center lg:gap-16">
           <div className="space-y-8">
-            {eyebrow && (
-              <Badge variant="default">{eyebrow}</Badge>
-            )}
+            {eyebrow && <Badge variant="default">{eyebrow}</Badge>}
             {title && (
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#1a1a1a] leading-tight">
                 {title}
@@ -38,11 +36,7 @@ export default function Hero({
                   </Button>
                 )}
                 {secondaryAction && (
-                  <Button
-                    href={secondaryAction.href}
-                    variant="ghost"
-                    size="lg"
-                  >
+                  <Button href={secondaryAction.href} variant="ghost" size="lg">
                     {secondaryAction.label}
                   </Button>
                 )}
@@ -67,13 +61,13 @@ export default function Hero({
             )}
           </div>
           {image && (
-            <div className="relative aspect-square rounded-2xl overflow-hidden shadow-lg">
+            <div className="relative aspect-video lg:aspect-square rounded-2xl overflow-hidden">
               <Image
                 src={image.src}
                 alt={image.alt}
-                width={image.width ?? 720}
-                height={image.height ?? 720}
-                className="object-cover w-full h-full"
+                width={image.width ?? 1920}
+                height={image.height ?? 1080}
+                className="object-cover w-full h-full aspect-video lg:aspect-square"
                 priority
               />
             </div>
@@ -83,4 +77,3 @@ export default function Hero({
     </section>
   );
 }
-

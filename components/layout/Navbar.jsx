@@ -1,17 +1,17 @@
-'use client';
+"use client";
 
-import Image from 'next/image';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { useState } from 'react';
-import Button from '@/components/ui/Button';
+import Image from "next/image";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { useState } from "react";
+import Button from "@/components/ui/Button";
 
 const NAV_LINKS = [
-  { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
-  { href: '/projects', label: 'Projects' },
-  { href: '/blogs', label: 'Blog' },
-  { href: '/contact', label: 'Contact' },
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/projects", label: "Projects" },
+  { href: "/blogs", label: "Blog" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function Navbar() {
@@ -22,9 +22,9 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-[#e7e7e7] shadow-sm">
+      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-[#e7e7e7]">
         <div className="container-custom">
-          <div className="flex items-center justify-between h-20">
+          <div className="flex items-center justify-between h-16">
             <Link
               href="/"
               className="flex items-center gap-3 group"
@@ -41,27 +41,30 @@ export default function Navbar() {
                   priority
                 />
               </div>
-              <div className="flex flex-col">
+              {/* <div className="flex flex-col">
                 <span className="text-lg font-bold text-[#1a1a1a] group-hover:text-[#5bad6a] transition-colors">
                   Makazi Fumigation
                 </span>
                 <span className="text-xs text-[#6d6d6d] tracking-wide">
                   Your partner in pest control
                 </span>
-              </div>
+              </div> */}
             </Link>
 
-            <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
+            <nav
+              className="hidden md:flex items-center gap-8"
+              aria-label="Main navigation"
+            >
               {NAV_LINKS.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   className={`text-base font-medium transition-colors ${
                     pathname === link.href
-                      ? 'text-[#5bad6a]'
-                      : 'text-[#1a1a1a] hover:text-[#5bad6a]'
+                      ? "text-[#5bad6a]"
+                      : "text-[#1a1a1a] hover:text-[#5bad6a]"
                   }`}
-                  aria-current={pathname === link.href ? 'page' : undefined}
+                  aria-current={pathname === link.href ? "page" : undefined}
                 >
                   {link.label}
                 </Link>
@@ -107,28 +110,39 @@ export default function Navbar() {
       <div
         id="mobile-menu"
         className={`md:hidden fixed inset-x-0 top-20 bg-white border-b border-[#e7e7e7] shadow-lg transition-transform duration-300 ${
-          isMenuOpen ? 'translate-y-0' : '-translate-y-full opacity-0 pointer-events-none'
+          isMenuOpen
+            ? "translate-y-0"
+            : "-translate-y-full opacity-0 pointer-events-none"
         }`}
         aria-hidden={!isMenuOpen}
       >
-        <nav className="container-custom py-6 space-y-4" aria-label="Mobile navigation">
+        <nav
+          className="container-custom py-6 space-y-4"
+          aria-label="Mobile navigation"
+        >
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
               href={link.href}
               className={`block py-2 text-base font-medium transition-colors ${
                 pathname === link.href
-                  ? 'text-[#5bad6a]'
-                  : 'text-[#1a1a1a] hover:text-[#5bad6a]'
+                  ? "text-[#5bad6a]"
+                  : "text-[#1a1a1a] hover:text-[#5bad6a]"
               }`}
               onClick={closeMenu}
-              aria-current={pathname === link.href ? 'page' : undefined}
+              aria-current={pathname === link.href ? "page" : undefined}
             >
               {link.label}
             </Link>
           ))}
           <div className="pt-4">
-            <Button href="/contact" variant="primary" size="md" className="w-full" onClick={closeMenu}>
+            <Button
+              href="/contact"
+              variant="primary"
+              size="md"
+              className="w-full"
+              onClick={closeMenu}
+            >
               Request a Survey
             </Button>
           </div>
@@ -137,4 +151,3 @@ export default function Navbar() {
     </>
   );
 }
-
