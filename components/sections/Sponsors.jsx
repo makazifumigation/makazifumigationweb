@@ -28,13 +28,13 @@ export default function Sponsors() {
                 key={sponsor.id}
                 className="aspect-video flex items-center justify-center p-4 bg-[#f6f6f6] rounded-xl border border-[#e7e7e7] hover:border-[#5bad6a] hover:shadow-md transition-all duration-300 group"
               >
-                <div className="relative w-full h-full transition-all duration-300 opacity-60 group-hover:opacity-100">
+                <div className="relative aspect-video  w-full transition-all duration-300 opacity-60 group-hover:opacity-100">
                   <Image
                     src={sponsor.logo}
                     alt={sponsor.alt}
-                    className="object-cover h-full w-full"
-                    height={300}
-                    width={512}
+                    className="object-cover w-full aspect-video "
+                    height={1080}
+                    width={1920}
                   />
                 </div>
               </div>
