@@ -109,7 +109,7 @@ export default function Navbar() {
       {/* Mobile Menu */}
       <div
         id="mobile-menu"
-        className={`md:hidden fixed inset-x-0 top-20 bg-white border-b border-[#e7e7e7] shadow-lg transition-transform duration-300 ${
+        className={`md:hidden z-50 fixed inset-x-0 top-16 bg-white border-b border-[#e7e7e7] shadow-lg transition-transform duration-300 ${
           isMenuOpen
             ? "translate-y-0"
             : "-translate-y-full opacity-0 pointer-events-none"
