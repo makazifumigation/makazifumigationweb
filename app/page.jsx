@@ -262,7 +262,7 @@ export default async function Home() {
               Ready to eliminate pests and protect your brand?
             </h2>
             <p className="text-lg text-[#6d6d6d]">
-              Partner with Makazi Fumigation for proactive pest management that
+              Partner with Makazi Fumigation for proactive pest management, that
               meets local regulations and international standards.
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
